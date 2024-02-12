@@ -1,0 +1,6 @@
+label{
+    color: var(--fontColor);
+}
+.registerForm{
+    margin-top: 8rem;
+}
