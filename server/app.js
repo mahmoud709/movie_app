@@ -4,15 +4,18 @@ import dotenv from 'dotenv';
 import route from './routes/route.js';
 import dbConnection from './datbase/config.js';
 dotenv.config({ path: "./config.env" });
-// Db Connection
+import compression from 'compression';
 
+// Db Connection
 const app=express();
 
 app.use(cors())
 app.use(express.json())
+app.use(compression());
+
 app.use('/',route)
 app.use('*',(req,res)=>{
-    res.send('<h3>Welcome to server</h3>')
+    res.send('this route not found')
 })
 dbConnection();
 app.listen(process.env.PORT|5000,(req,res)=>{
