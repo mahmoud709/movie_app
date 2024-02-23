@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
-import asyncHandler from 'express-async-handler';
 
-const dbConnection = asyncHandler(async (req, res) => {
+const dbConnection = async () => {
     try {
         await mongoose.connect(process.env.DBCONNECTION);
         console.log('DB connected successfuly');
@@ -9,5 +8,5 @@ const dbConnection = asyncHandler(async (req, res) => {
     catch (err) {
         console.log('Error' + err);
     }
-});
+};
 export default dbConnection;

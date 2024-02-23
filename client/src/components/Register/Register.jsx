@@ -20,7 +20,7 @@ export default function SignupForm() {
     setUserData(user);
   }
   async function postData() {
-    await axios.post('http://localhost:5000/register', userData);
+    await axios.post('https://movie-app-l0g2.onrender.com/register', userData);
     setisLoading(false);
     navigate('/')
   }
